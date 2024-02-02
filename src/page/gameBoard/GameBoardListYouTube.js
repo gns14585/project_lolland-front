@@ -51,42 +51,43 @@ export function GameBoardListYouTube() {
   }, []);
 
   return (
-    <Card>
-      <CardHeader size={"md"}>
-        <Heading fontSize={"1.5rem"} textAlign={"center"}>
-          실시간 인기 게임 영상
-        </Heading>
-      </CardHeader>
-      <Divider color={"whitesmoke"} />
-      <CardBody>
-        <Box>
-          <Swiper
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Navigation, SwiperPagination]}
-            className="mySwiper"
-          >
-            {searchedVideos &&
-              searchedVideos.map((item) => (
-                <SwiperSlide key={item.videoId}>
-                  <Box key={item.videoId} mb={"50px"}>
-                    <YouTube videoId={item.videoId} opts={opts} />
-                    <Box
-                      fontSize={"1.1em"}
-                      mt={"5px"}
-                      fontWeight={"bold"}
-                      textAlign={"center"}
-                    >
-                      {item.title.replace(/&QUOT;/gi, '"')}
-                    </Box>
-                  </Box>
-                </SwiperSlide>
-              ))}
-          </Swiper>
-        </Box>
-      </CardBody>
-    </Card>
+    <></>
+    // <Card>
+    //   <CardHeader size={"md"}>
+    //     <Heading fontSize={"1.5rem"} textAlign={"center"}>
+    //       실시간 인기 게임 영상
+    //     </Heading>
+    //   </CardHeader>
+    //   <Divider color={"whitesmoke"} />
+    //   <CardBody>
+    //     <Box>
+    //       {/*<Swiper*/}
+    //       {/*  slidesPerView={1}*/}
+    //       {/*  pagination={{*/}
+    //       {/*    clickable: true,*/}
+    //       {/*  }}*/}
+    //       {/*  modules={[Navigation, SwiperPagination]}*/}
+    //       {/*  className="mySwiper"*/}
+    //       {/*>*/}
+    //       {/*  {searchedVideos &&*/}
+    //       {/*    searchedVideos.map((item) => (*/}
+    //       {/*      <SwiperSlide key={item.videoId}>*/}
+    //       {/*        <Box key={item.videoId} mb={"50px"}>*/}
+    //       {/*          <YouTube videoId={item.videoId} opts={opts} />*/}
+    //       {/*          <Box*/}
+    //       {/*            fontSize={"1.1em"}*/}
+    //       {/*            mt={"5px"}*/}
+    //       {/*            fontWeight={"bold"}*/}
+    //       {/*            textAlign={"center"}*/}
+    //       {/*          >*/}
+    //       {/*            {item.title.replace(/&QUOT;/gi, '"')}*/}
+    //       {/*          </Box>*/}
+    //       {/*        </Box>*/}
+    //       {/*      </SwiperSlide>*/}
+    //       {/*    ))}*/}
+    //       {/*</Swiper>*/}
+    //     </Box>
+    //   </CardBody>
+    // </Card>
   );
 }
