@@ -310,7 +310,7 @@ export function HomeBody() {
         <Box
           justifyContent="center"
           display="flex"
-          minW={"1600px"}
+          minW={"1400px"}
           mt={"40px"}
           mb={10}
         >
@@ -322,7 +322,7 @@ export function HomeBody() {
             pagination={{ clickable: true }}
             autoplay={{ delay: 3000 }}
             effect="fade"
-            style={{ width: "600px", margin: "0", marginRight: "10px" }}
+            style={{ width: "35%", margin: "0", marginRight: "10px" }}
           >
             {mostReviewedProducts.map((product) => (
               <SwiperSlide key={product.product_id}>
@@ -331,7 +331,7 @@ export function HomeBody() {
                     mr={2}
                     mt={"40px"}
                     border="1px solid #E5E5E5"
-                    w="600px"
+                    w="100%"
                     h="600px"
                     display="flex"
                     justifyContent="center"
@@ -380,7 +380,7 @@ export function HomeBody() {
                       mb="20px"
                       w={"100%"}
                     >
-                      <Text>[{product.company_name}]</Text>
+                      <Text fontWeight={"bold"}>[{product.company_name}]</Text>
                       <Text mt={2} fontSize={"1.2rem"}>
                         {product.product_name}
                       </Text>
@@ -412,10 +412,16 @@ export function HomeBody() {
           </Swiper>
 
           {/*  작은 상품 박스들  */}
-          <Box mt={"40px"} display="flex" flexDirection="column">
+          <Box w={"45%"} mt={"40px"} display="flex" flexDirection="column">
             <Flex gap={4}>
               {/* ------------------------ 게임장비커뮤니티 베스트게시글 ------------------------ */}
-              <Box p={2} border="1px solid #E5E5E5" w="350px" h="300px">
+              <Box
+                w={"100%"}
+                p={2}
+                border="1px solid #E5E5E5"
+                // w="350px"
+                h="300px"
+              >
                 <Text color={"gray"}>게임장비커뮤니티</Text>
                 <Flex w={"100%"} justifyContent={"space-between"}>
                   <Text fontSize={"1.5rem"} fontWeight={"bold"}>
@@ -459,7 +465,7 @@ export function HomeBody() {
               </Box>
 
               {/* ------------------------ 게임커뮤니티 베스트게시물 ------------------------ */}
-              <Box p={2} border="1px solid #E5E5E5" w="350px" h="300px">
+              <Box p={2} border="1px solid #E5E5E5" w="100%" h="300px">
                 <Text color={"gray"}>게임커뮤니티</Text>
                 <Flex w={"100%"} justifyContent={"space-between"}>
                   <Text fontSize={"1.5rem"} fontWeight={"bold"}>
@@ -502,7 +508,14 @@ export function HomeBody() {
             </Flex>
 
             {/* ------------------------ 최신뉴스기사 게시글 ------------------------ */}
-            <Box p={2} mt={5} border="1px solid #E5E5E5" w="716px" h="280px">
+            <Box
+              w={"100%"}
+              p={2}
+              mt={5}
+              border="1px solid #E5E5E5"
+              // w="716px"
+              h="280px"
+            >
               <Text color={"gray"}>리그오브레전드 관련</Text>
               <Flex w={"100%"} justifyContent={"space-between"}>
                 <Text fontSize={"1.5rem"} fontWeight={"bold"}>
@@ -551,7 +564,7 @@ export function HomeBody() {
         alignItems="center"
         p={10}
       >
-        <Box minW={"1400px"}>
+        <Box w={"80%"}>
           <Text fontWeight={"bold"} fontSize="2.3rem" textAlign="center" mt={5}>
             Categories
           </Text>
@@ -656,7 +669,7 @@ export function HomeBody() {
         alignItems="center"
         p={10}
       >
-        <Box width="full" maxW="1400px" mx="auto">
+        <Box width="full" maxW="1600px" mx="auto">
           {categories.map((category, index) => (
             <Box key={category.category_id} mb="40px">
               <Flex
@@ -718,7 +731,7 @@ export function HomeBody() {
                   borderRadius={"lg"}
                   columns={4}
                   spacing={9}
-                  w={"1200px"}
+                  w={"100%"}
                 >
                   {categoryProducts[category.category_id]
                     ?.slice(0, 8)
