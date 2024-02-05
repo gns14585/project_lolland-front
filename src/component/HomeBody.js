@@ -292,7 +292,7 @@ export function HomeBody() {
   };
 
   return (
-    <Box minW={"1400px"}>
+    <Box minW={"1600px"}>
       {/* ------------------------ 상단 배너 슬라이드 ------------------------ */}
       <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <Box borderRadius={"20px"} background={"white"} w={"90%"} h={"100%"}>
@@ -310,7 +310,7 @@ export function HomeBody() {
         <Box
           justifyContent="center"
           display="flex"
-          minW={"1400px"}
+          minW={"1600px"}
           mt={"40px"}
           mb={10}
         >
@@ -322,7 +322,7 @@ export function HomeBody() {
             pagination={{ clickable: true }}
             autoplay={{ delay: 3000 }}
             effect="fade"
-            style={{ width: "600px" }}
+            style={{ width: "600px", margin: "0", marginRight: "10px" }}
           >
             {mostReviewedProducts.map((product) => (
               <SwiperSlide key={product.product_id}>
@@ -412,7 +412,7 @@ export function HomeBody() {
           </Swiper>
 
           {/*  작은 상품 박스들  */}
-          <Box mt={"40px"} display="flex" flexDirection="column" gap="24px">
+          <Box mt={"40px"} display="flex" flexDirection="column">
             <Flex gap={4}>
               {/* ------------------------ 게임장비커뮤니티 베스트게시글 ------------------------ */}
               <Box p={2} border="1px solid #E5E5E5" w="350px" h="300px">
@@ -502,7 +502,7 @@ export function HomeBody() {
             </Flex>
 
             {/* ------------------------ 최신뉴스기사 게시글 ------------------------ */}
-            <Box p={2} border="1px solid #E5E5E5" w="716px" h="275px">
+            <Box p={2} mt={5} border="1px solid #E5E5E5" w="716px" h="280px">
               <Text color={"gray"}>리그오브레전드 관련</Text>
               <Flex w={"100%"} justifyContent={"space-between"}>
                 <Text fontSize={"1.5rem"} fontWeight={"bold"}>
@@ -559,7 +559,7 @@ export function HomeBody() {
             Please select your preferred category.
           </Text>
 
-          <SimpleGrid columns={"4"} gap={10} p={5} mt={10}>
+          <SimpleGrid spacingY={4} columns={"4"} p={5} mt={10}>
             {categories.map((category, index) => {
               // 9번째 카테고리 숨김 처리
               // 버튼 누르면 보임
@@ -650,13 +650,15 @@ export function HomeBody() {
       {/* ------------------------- TODO : 임시로 카테고리별 상품목록 및 텍스트/이미지 출력완료 ------------------------- */}
       <Box
         borderTop={"1px solid #eeeeee"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
+        mt={10}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        p={10}
       >
-        <Box mt={10} mx="10%">
-          {categories.map((category) => (
-            <Box mt={10} key={category.category_id} mb="40px">
+        <Box width="full" maxW="1400px" mx="auto">
+          {categories.map((category, index) => (
+            <Box key={category.category_id} mb="40px">
               <Flex
                 justifyContent="space-between"
                 alignItems="center"
@@ -674,7 +676,7 @@ export function HomeBody() {
                   더보기
                 </Button>
               </Flex>
-              <Flex minW={"1400px"} gap={2}>
+              <Flex w={"100%"} gap={2}>
                 <VStack spacing={0}>
                   <Box
                     borderRadius={"10px"}
@@ -716,6 +718,7 @@ export function HomeBody() {
                   borderRadius={"lg"}
                   columns={4}
                   spacing={9}
+                  w={"1200px"}
                 >
                   {categoryProducts[category.category_id]
                     ?.slice(0, 8)
@@ -725,7 +728,7 @@ export function HomeBody() {
                         borderRadius="lg"
                         overflow="hidden"
                         h={"100%"}
-                        w={"250px"}
+                        w={"260px"}
                         display="flex"
                         flexDirection="column"
                         _hover={{ cursor: "pointer" }}
